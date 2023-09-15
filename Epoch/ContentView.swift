@@ -1,14 +1,16 @@
 import SwiftUI
+import AVFoundation
 
 struct ContentView: View {
     
     // Constant Data
-    let baseTime = 10
+    let baseTime = 1500
   
     // Stateful Data
     @State var timerIsPaused = true
     @State private var timeRemaining: Int
     @State var timer: Timer? = nil
+    @State private var player: AVAudioPlayer? = nil
     
     // Computed Data
     var timerIsFinished: Bool {
@@ -82,8 +84,23 @@ struct ContentView: View {
                 .padding(28)
             VStack {
                 Text("\(secondsToTime(sec: timeRemaining))")
+                    .foregroundColor(Color.black)
                     .font(.system(size: 64, weight: .bold, design: .serif))
             }
+        }
+    }
+    
+    func playTimerSound() {
+        guard let url = Bundle.main.url(forResource: "jingle", withExtension: "mp3") else {
+            print("Sound file not found")
+            return
+        }
+        do {
+            self.player = try AVAudioPlayer(contentsOf: url)
+            self.player?.prepareToPlay()
+            self.player?.play()
+        } catch {
+            print("Error playing sound: \(error.localizedDescription)")
         }
     }
   
@@ -95,6 +112,7 @@ struct ContentView: View {
     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ tempTimer in
         timeRemaining -= 1
         if timerIsFinished {
+            playTimerSound()
             stopTimer()
         }
         
