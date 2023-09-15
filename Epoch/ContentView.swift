@@ -11,6 +11,7 @@ struct ContentView: View {
     @State private var timeRemaining: Int
     @State var timer: Timer? = nil
     @State private var player: AVAudioPlayer? = nil
+    @State private var isNotificationPermissionGranted: Bool = false
     
     // Computed Data
     var timerIsFinished: Bool {
@@ -39,21 +40,27 @@ struct ContentView: View {
   
     var body: some View {
         VStack {
-            TimerCircle();
-            if timerIsPaused {
+            if isNotificationPermissionGranted == false {
+                OnboardingView()
+            } else {
                 VStack {
-                    if timerIsFinished {
-                        RestartButton()
+                    TimerCircle();
+                    if timerIsPaused {
+                        VStack {
+                            if timerIsFinished {
+                                RestartButton()
+                            } else {
+                                StartButton()
+                                RestartButton()
+                            }
+                        }
                     } else {
-                        StartButton()
-                        RestartButton()
+                        StopButton()
                     }
                 }
-            } else {
-                StopButton()
             }
-        }
-    };
+        }.onAppear(perform: checkNotificationPermission)
+    }
     
     
     func StartButton() -> some View {
@@ -89,6 +96,19 @@ struct ContentView: View {
             }
         }
     }
+    
+    private func checkNotificationPermission() {
+            UNUserNotificationCenter.current().getNotificationSettings { settings in
+                DispatchQueue.main.async {
+                    switch settings.authorizationStatus {
+                    case .authorized, .provisional:
+                        isNotificationPermissionGranted = true
+                    default:
+                        isNotificationPermissionGranted = false
+                    }
+                }
+            }
+        }
     
     func playTimerSound() {
         guard let url = Bundle.main.url(forResource: "jingle", withExtension: "mp3") else {
