@@ -11,6 +11,7 @@
 		3942C90C2AB477C2005E6FD6 /* jingle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3942C90B2AB477C2005E6FD6 /* jingle.mp3 */; };
 		3966501B2AB4BC04000648F6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966501A2AB4BC04000648F6 /* OnboardingView.swift */; };
 		396650212AB4C80F000648F6 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396650202AB4C80F000648F6 /* TimerView.swift */; };
+		396650282AB4DDB2000648F6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 396650272AB4DDB2000648F6 /* Colors.xcassets */; };
 		39D1130D2AAE54CC005A7C0A /* EpochApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1130C2AAE54CC005A7C0A /* EpochApp.swift */; };
 		39D1130F2AAE54CC005A7C0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1130E2AAE54CC005A7C0A /* ContentView.swift */; };
 		39D113112AAE54CD005A7C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D113102AAE54CD005A7C0A /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 		3942C90B2AB477C2005E6FD6 /* jingle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jingle.mp3; path = Epoch/jingle.mp3; sourceTree = "<group>"; };
 		3966501A2AB4BC04000648F6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		396650202AB4C80F000648F6 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		396650272AB4DDB2000648F6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		39D113092AAE54CC005A7C0A /* Epoch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Epoch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D1130C2AAE54CC005A7C0A /* EpochApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpochApp.swift; sourceTree = "<group>"; };
 		39D1130E2AAE54CC005A7C0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				396650202AB4C80F000648F6 /* TimerView.swift */,
-				39D1130E2AAE54CC005A7C0A /* ContentView.swift */,
 				3966501A2AB4BC04000648F6 /* OnboardingView.swift */,
 			);
 			path = Views;
@@ -88,8 +89,10 @@
 				3966501E2AB4C70B000648F6 /* Views */,
 				3966501C2AB4C6E2000648F6 /* Core */,
 				39D1130C2AAE54CC005A7C0A /* EpochApp.swift */,
+				39D1130E2AAE54CC005A7C0A /* ContentView.swift */,
 				39D113102AAE54CD005A7C0A /* Assets.xcassets */,
 				39D113122AAE54CD005A7C0A /* Preview Content */,
+				396650272AB4DDB2000648F6 /* Colors.xcassets */,
 			);
 			path = Epoch;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				396650282AB4DDB2000648F6 /* Colors.xcassets in Resources */,
 				39D113142AAE54CD005A7C0A /* Preview Assets.xcassets in Resources */,
 				3942C90C2AB477C2005E6FD6 /* jingle.mp3 in Resources */,
 				3942C9082AB47628005E6FD6 /* positive-orchestral-jingle-21444.mp3 in Resources */,

@@ -5,13 +5,18 @@ struct ContentView: View {
     @State private var isNotificationPermissionGranted: Bool = false
 
     var body: some View {
-        VStack {
-            if isNotificationPermissionGranted == false {
-                OnboardingView()
-            } else {
-                TimerView()
+        ZStack {
+            Color("Background")
+            VStack {
+                if isNotificationPermissionGranted == false {
+                    OnboardingView()
+                } else {
+                    TimerView()
+                }
             }
-        }.onAppear(perform: checkNotificationPermission)
+            .onAppear(perform: checkNotificationPermission)
+        }
+        .ignoresSafeArea()
     }
     
     
