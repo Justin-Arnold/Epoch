@@ -1,17 +1,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    // Constant Data
+    let baseTime = 10
   
-    @State var hours = 0;
-    @State var minutes = 25;
-    @State var seconds = 0;
-    @State var timerIsPaused = true;
-    @State var timeRemaining = 1500;
-  
-    @State var timer: Timer? = nil;
+    // Stateful Data
+    @State var timerIsPaused = true
+    @State private var timeRemaining: Int
+    @State var timer: Timer? = nil
+    
+    // Computed Data
+    var timerIsFinished: Bool {
+        return timeRemaining == 0
+    }
+    
+    init() {
+        timeRemaining = self.baseTime
+    }
     
     func restartTimer() {
-      timeRemaining = 1500
+        timeRemaining = self.baseTime
     };
     
     func formatToDoubleDigit(_ number: Int) -> String {
@@ -31,8 +40,12 @@ struct ContentView: View {
             TimerCircle();
             if timerIsPaused {
                 VStack {
-                    StartButton()
-                    RestartButton()
+                    if timerIsFinished {
+                        RestartButton()
+                    } else {
+                        StartButton()
+                        RestartButton()
+                    }
                 }
             } else {
                 StopButton()
@@ -81,7 +94,7 @@ struct ContentView: View {
       }
     timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ tempTimer in
         timeRemaining -= 1
-        if timeRemaining == 0 {
+        if timerIsFinished {
             stopTimer()
         }
         
