@@ -1,8 +1,14 @@
+//
+//  TimerView.swift
+//  Epoch
+//
+//  Created by Justin Arnold on 9/15/23.
+//
+
 import SwiftUI
 import AVFoundation
 
-struct ContentView: View {
-    
+struct TimerView: View {
     // Constant Data
     let baseTime = 1500
   
@@ -40,27 +46,22 @@ struct ContentView: View {
   
     var body: some View {
         VStack {
-            if isNotificationPermissionGranted == false {
-                OnboardingView()
-            } else {
+            TimerCircle();
+            if timerIsPaused {
                 VStack {
-                    TimerCircle();
-                    if timerIsPaused {
-                        VStack {
-                            if timerIsFinished {
-                                RestartButton()
-                            } else {
-                                StartButton()
-                                RestartButton()
-                            }
-                        }
+                    if timerIsFinished {
+                        RestartButton()
                     } else {
-                        StopButton()
+                        StartButton()
+                        RestartButton()
                     }
                 }
+            } else {
+                StopButton()
             }
-        }.onAppear(perform: checkNotificationPermission)
+        }
     }
+
     
     
     func StartButton() -> some View {
@@ -143,11 +144,5 @@ struct ContentView: View {
     timerIsPaused = true
     timer?.invalidate()
     timer = nil
-  }
-}
-
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
   }
 }
