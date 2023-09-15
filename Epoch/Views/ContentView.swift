@@ -1,6 +1,5 @@
 import SwiftUI
 
-
 struct ContentView: View {
     
     @State private var isNotificationPermissionGranted: Bool = false
@@ -17,13 +16,15 @@ struct ContentView: View {
     
     
     private func checkNotificationPermission() {
-        UNUserNotificationCenter.current().getNotificationSettings { settings in
-            DispatchQueue.main.async {
+        UNUserNotificationCenter
+        .current()
+        .getNotificationSettings {
+            settings in DispatchQueue.main.async {
                 switch settings.authorizationStatus {
-                case .authorized, .provisional:
-                    isNotificationPermissionGranted = true
-                default:
-                    isNotificationPermissionGranted = false
+                    case .authorized, .provisional:
+                        isNotificationPermissionGranted = true
+                    default:
+                        isNotificationPermissionGranted = false
                 }
             }
         }
