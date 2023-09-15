@@ -40,6 +40,7 @@ struct ContentView: View {
         }
     };
     
+    
     func StartButton() -> some View {
         return Button(action: {self.startTimer()}) {
             Label("play", systemImage: "play.fill")
@@ -61,10 +62,14 @@ struct ContentView: View {
     func TimerCircle() -> some View {
         ZStack{
             Circle()
-                .stroke(Color.blue)
+                .fill(Color.blue)
                 .padding(20)
+            Circle()
+                .fill(Color.white)
+                .padding(28)
             VStack {
                 Text("\(secondsToTime(sec: timeRemaining))")
+                    .font(.system(size: 64, weight: .bold, design: .serif))
             }
         }
     }
