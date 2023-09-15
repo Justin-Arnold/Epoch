@@ -27,41 +27,47 @@ struct ContentView: View {
     };
   
     var body: some View {
-      ZStack{
-          Circle()
-              .stroke(Color.blue)
-              .padding(20)
-          VStack {
-              Text("\(secondsToTime(sec: timeRemaining))")
-              if timerIsPaused {
-                  HStack {
-                      Button(action:{
-                          self.restartTimer()
-                      }){
-                          Image(systemName: "backward.end.alt")
-                              .padding(.all)
-                      }
-                      .padding(.all)
-                      Button(action:{
-                          self.startTimer()
-                      }){
-                          Image(systemName: "play.fill")
-                              .padding(.all)
-                      }
-                      .padding(.all)
-                  }
-              } else {
-                  Button(action:{
-                      self.stopTimer()
-                  }){
-                      Image(systemName: "stop.fill")
-                          .padding(.all)
-                  }
-                  .padding(.all)
-              }
-          }
-      }
+        VStack {
+            TimerCircle();
+            if timerIsPaused {
+                VStack {
+                    StartButton()
+                    RestartButton()
+                }
+            } else {
+                StopButton()
+            }
+        }
     };
+    
+    func StartButton() -> some View {
+        return Button(action: {self.startTimer()}) {
+            Label("play", systemImage: "play.fill")
+        }.buttonStyle(.borderedProminent).controlSize(.large)
+    }
+    
+    func StopButton() -> some View {
+        return Button(action: {self.stopTimer()}) {
+            Label("stop", systemImage: "stop.fill")
+        }.buttonStyle(.borderedProminent).controlSize(.large)
+    }
+    
+    func RestartButton() -> some View {
+        return Button(action: {self.restartTimer()}) {
+            Label("restart", systemImage: "backward.end.alt")
+        }.controlSize(.mini).padding(4)
+    }
+    
+    func TimerCircle() -> some View {
+        ZStack{
+            Circle()
+                .stroke(Color.blue)
+                .padding(20)
+            VStack {
+                Text("\(secondsToTime(sec: timeRemaining))")
+            }
+        }
+    }
   
   func startTimer(){
     timerIsPaused = false
