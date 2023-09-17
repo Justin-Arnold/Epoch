@@ -6,7 +6,7 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            Color("Background")
+            AppBackground()
             VStack {
                 if isNotificationPermissionGranted == false {
                     OnboardingView()

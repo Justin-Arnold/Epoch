@@ -18,6 +18,7 @@ struct TimerView: View {
     @State var timer: Timer? = nil
     @State private var player: AVAudioPlayer? = nil
     @State private var isNotificationPermissionGranted: Bool = false
+    @State private var dragOffset: CGFloat = 0.0
     
     // Computed Data
     var timerIsFinished: Bool {
@@ -45,21 +46,38 @@ struct TimerView: View {
     };
   
     var body: some View {
-        VStack {
-            TimerCircle();
-            if timerIsPaused {
-                VStack {
-                    if timerIsFinished {
-                        RestartButton()
-                    } else {
-                        StartButton()
-                        RestartButton()
+        VStack() {
+            TimerCircle()
+            Spacer();
+            ZStack {
+                RoundedRectangle(cornerRadius: 44)
+                    .aspectRatio(3.0, contentMode: .fit)
+                    .padding(8)
+                    .shadow(radius: 4.0)
+                if timerIsPaused {
+                    HStack {
+                        if timerIsFinished {
+                            RestartButton()
+                        } else {
+                            StartButton()
+                            RestartButton()
+                        }
                     }
+                } else {
+                    StopButton()
                 }
-            } else {
-                StopButton()
             }
-        }
+        }.gesture(DragGesture()
+            .onChanged{ gestureValue in
+                self.dragOffset = gestureValue.translation.height
+                self.timeRemaining -= Int(self.dragOffset / 10)
+                self.timeRemaining -= Int(self.dragOffset / 10)
+                self.timeRemaining = max(self.timeRemaining, 0)
+            }
+            .onEnded{ _ in
+                self.dragOffset = 0.0
+            }
+        )
     }
 
     
@@ -78,23 +96,17 @@ struct TimerView: View {
     
     func RestartButton() -> some View {
         return Button(action: {self.restartTimer()}) {
-            Label("restart", systemImage: "backward.end.alt")
+            Label("", systemImage: "backward.end.alt")
         }.controlSize(.mini).padding(4)
     }
     
     func TimerCircle() -> some View {
-        ZStack{
-            Circle()
-                .fill(Color.blue)
-                .padding(20)
-            Circle()
-                .fill(Color.white)
-                .padding(28)
-            VStack {
-                Text("\(secondsToTime(sec: timeRemaining))")
-                    .foregroundColor(Color.black)
-                    .font(.system(size: 64, weight: .bold, design: .serif))
-            }
+        VStack {
+            Spacer()
+            Text("\(secondsToTime(sec: timeRemaining))")
+                .foregroundColor(Color.white)
+                .font(.system(size: 80, weight: .bold, design: .serif))
+            Spacer()
         }
     }
     
