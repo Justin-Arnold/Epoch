@@ -6,25 +6,19 @@ struct ContentView: View {
 
     var body: some View {
         ZStack {
-            AppBackground()
-            VStack {
-                if isNotificationPermissionGranted == false {
-                    OnboardingView()
-                } else {
-                    TimerView()
-                }
+            if isNotificationPermissionGranted == false {
+                OnboardingView()
+            } else {
+                MainTabView()  // Replacing ChooseFocusView with MainTabView
             }
-            .onAppear(perform: checkNotificationPermission)
-        }
-        .ignoresSafeArea()
+        }.onAppear(perform: checkNotificationPermission)
     }
-    
-    
+
     private func checkNotificationPermission() {
         UNUserNotificationCenter
         .current()
-        .getNotificationSettings {
-            settings in DispatchQueue.main.async {
+        .getNotificationSettings { settings in
+            DispatchQueue.main.async {
                 switch settings.authorizationStatus {
                     case .authorized, .provisional:
                         isNotificationPermissionGranted = true
@@ -36,8 +30,21 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
-  }
-}
+//extension UINavigationController {
+//    override open func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//    let standard = UINavigationBarAppearance()
+//    standard.backgroundColor = .red //When you scroll or you have title (small one)
+//
+//    let compact = UINavigationBarAppearance()
+//    compact.backgroundColor = .green //compact-height
+//
+//    let scrollEdge = UINavigationBarAppearance()
+//    scrollEdge.backgroundColor = .blue //When you have large title
+//
+//    navigationBar.standardAppearance = standard
+//    navigationBar.compactAppearance = compact
+//    navigationBar.scrollEdgeAppearance = scrollEdge
+// }
+//}
