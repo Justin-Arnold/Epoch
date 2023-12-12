@@ -23,6 +23,7 @@
 		39D1130F2AAE54CC005A7C0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1130E2AAE54CC005A7C0A /* ContentView.swift */; };
 		39D113112AAE54CD005A7C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D113102AAE54CD005A7C0A /* Assets.xcassets */; };
 		39D113142AAE54CD005A7C0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D113132AAE54CD005A7C0A /* Preview Assets.xcassets */; };
+		39DE80292B280D3800C6CE6B /* RoutineDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DE80282B280D3800C6CE6B /* RoutineDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		39D1130E2AAE54CC005A7C0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		39D113102AAE54CD005A7C0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39D113132AAE54CD005A7C0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		39DE80282B280D3800C6CE6B /* RoutineDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				3966501A2AB4BC04000648F6 /* OnboardingView.swift */,
 				3999937D2AB88A4900CD435D /* ChooseFocusView.swift */,
+				39DE80282B280D3800C6CE6B /* RoutineDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				3966502A2AB4E4F0000648F6 /* AppBackground.swift in Sources */,
 				399993842AB88D0B00CD435D /* Priority.swift in Sources */,
 				3988CF022B2547790062833C /* RoutineListView.swift in Sources */,
+				39DE80292B280D3800C6CE6B /* RoutineDetailView.swift in Sources */,
 				39D1130F2AAE54CC005A7C0A /* ContentView.swift in Sources */,
 				3999937C2AB7C4B300CD435D /* PriorityCard.swift in Sources */,
 				396650212AB4C80F000648F6 /* TimerView.swift in Sources */,
