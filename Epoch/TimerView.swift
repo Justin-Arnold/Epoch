@@ -108,39 +108,6 @@ struct TimerView: View {
                 }
             }
         }
-    //    var body: some View {
-//        VStack() {
-//            TimerCircle()
-//            Spacer();
-//            ZStack {
-//                RoundedRectangle(cornerRadius: 20)
-//                    .aspectRatio(3.0, contentMode: .fit)
-//                    .padding(8)
-//                    .shadow(radius: 4.0)
-//                if timerIsPaused {
-//                    HStack {
-//                        if timerIsFinished {
-//                            RestartButton()
-//                        } else {
-//                            StartButton()
-//                            RestartButton()
-//                        }
-//                    }
-//                } else {
-//                    StopButton()
-//                }
-//            }
-//        }.gesture(DragGesture()
-//            .onChanged({ gestureValue in
-//                self.dragOffset = gestureValue.translation.height
-//                self.timeRemaining -= Int(self.dragOffset / 10)
-//                self.timeRemaining = max(self.timeRemaining, 0)
-//            })
-//            .onEnded({ _ in
-//                self.dragOffset = 0.0
-//            })
-//        )
-//    }
 
     // Converts the remaining time into a String formatted as "mm:ss"
     func timeString(from totalSeconds: Int) -> String {
