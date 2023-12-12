@@ -57,6 +57,16 @@ struct TimerView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                     .padding()
+                    .gesture(DragGesture()
+                        .onChanged({ gestureValue in
+                            self.dragOffset = gestureValue.translation.height
+                            self.timeRemaining -= Int(self.dragOffset / 10)
+                            self.timeRemaining = max(self.timeRemaining, 0)
+                        })
+                        .onEnded({ _ in
+                            self.dragOffset = 0.0
+                        })
+                    )
                 
                 Button(action: {
                     self.isActive.toggle()
