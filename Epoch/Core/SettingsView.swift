@@ -11,7 +11,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("notificationsEnabled") private var notificationsEnabled: Bool = true
     @AppStorage("baseTimeInMinutes") private var baseTimeInMinutes: Int = 25
-    let timeOptions = Array(5...60)
+    let timeOptions = Array(1...60)
 
     var body: some View {
         NavigationView {
