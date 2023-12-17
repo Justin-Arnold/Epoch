@@ -10,7 +10,8 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("notificationsEnabled") private var notificationsEnabled: Bool = true
-    // Add more settings as needed
+    @AppStorage("baseTimeInMinutes") private var baseTimeInMinutes: Int = 25
+    let timeOptions = Array(5...60)
 
     var body: some View {
         NavigationView {
@@ -19,7 +20,12 @@ struct SettingsView: View {
                     Toggle(isOn: $notificationsEnabled) {
                         Text("Enable Notifications")
                     }
-                    // Add more general settings here
+                    Picker("Base Time", selection: $baseTimeInMinutes) {
+                        ForEach(timeOptions, id: \.self) { time in
+                            Text("\(time) minutes")
+                        }
+                    }
+                    
                 }
 
                 // Add other sections for different categories of settings
