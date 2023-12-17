@@ -53,7 +53,8 @@ class TimerViewModel: ObservableObject {
         if let startTime = startTime {
             let elapsedTime = Date().timeIntervalSince(startTime)
             timeRemaining = max(baseTimeInSeconds - Int(elapsedTime), 0)
-            if timeRemaining == 0 {
+            if timeRemaining <= 0 {
+                timeRemaining = 0
                 pauseTimer()
             }
         }
