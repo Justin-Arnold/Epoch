@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 import UserNotifications
 
 
@@ -13,6 +14,7 @@ class TimerViewModel: ObservableObject {
     // Publish changes to the view
     @Published var timeRemaining: Int
     @Published var isActive: Bool = false
+    private var audioPlayer: AVAudioPlayer?
 
     private var baseTimeInSeconds: Int = 0
     private var startTime: Date?
@@ -59,8 +61,33 @@ class TimerViewModel: ObservableObject {
             timeRemaining = max(baseTimeInSeconds - Int(elapsedTime), 0)
             if timeRemaining <= 0 {
                 timeRemaining = 0
+                let soundName = UserDefaults.standard.string(forKey: "selectedAlarmSound") ?? "default"
+                playSound(soundName: soundName)
                 pauseTimer()
             }
+        }
+    }
+    
+    func playSound(soundName: String) {
+        // Directly use the file name without any string manipulation
+        let soundNameWithoutExtension = soundName.components(separatedBy: ".wav").first ?? soundName
+
+        // Attempt to construct the URL for the sound file
+        guard let url = Bundle.main.url(forResource: soundNameWithoutExtension, withExtension: "wav", subdirectory: "Alarms") else {
+            print("Could not find the Library/Sounds directory.")
+            return
+        }
+
+        print("URL for sound file: \(url)")
+
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+            audioPlayer?.play()
+        } catch {
+            print("Error setting up audio session or playing sound: \(error)")
         }
     }
     
