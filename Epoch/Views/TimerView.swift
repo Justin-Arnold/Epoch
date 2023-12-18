@@ -71,7 +71,7 @@ struct TimerView: View {
                 
                 
             }
-            .background(Color.green.edgesIgnoringSafeArea(.all))
+            .background(Color(red: 0.82, green: 0.74, blue: 0.59).edgesIgnoringSafeArea(.all))
             .onAppear {
                 viewModel.setBaseTime(baseTimeInSeconds)
             }
