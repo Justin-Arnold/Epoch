@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3942440B2B2FBA6E00EF0ACE /* marimba.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3942440A2B2FBA6E00EF0ACE /* marimba.mp3 */; };
-		3942C90C2AB477C2005E6FD6 /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3942C90B2AB477C2005E6FD6 /* alert.mp3 */; };
+		394244122B2FD66C00EF0ACE /* Alarms in Resources */ = {isa = PBXBuildFile; fileRef = 394244112B2FD66C00EF0ACE /* Alarms */; };
 		3966501B2AB4BC04000648F6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966501A2AB4BC04000648F6 /* OnboardingView.swift */; };
 		396650212AB4C80F000648F6 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396650202AB4C80F000648F6 /* TimerView.swift */; };
 		396650282AB4DDB2000648F6 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 396650272AB4DDB2000648F6 /* Colors.xcassets */; };
@@ -28,9 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3942440A2B2FBA6E00EF0ACE /* marimba.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = marimba.mp3; sourceTree = "<group>"; };
-		3942440C2B2FBA8E00EF0ACE /* short.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = short.mp3; sourceTree = "<group>"; };
-		3942C90B2AB477C2005E6FD6 /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alert.mp3; sourceTree = "<group>"; };
+		394244112B2FD66C00EF0ACE /* Alarms */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Alarms; sourceTree = "<group>"; };
 		3966501A2AB4BC04000648F6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		396650202AB4C80F000648F6 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		396650272AB4DDB2000648F6 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -61,16 +58,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		394244092B2FB95600EF0ACE /* Alarms */ = {
-			isa = PBXGroup;
-			children = (
-				3942C90B2AB477C2005E6FD6 /* alert.mp3 */,
-				3942440C2B2FBA8E00EF0ACE /* short.mp3 */,
-				3942440A2B2FBA6E00EF0ACE /* marimba.mp3 */,
-			);
-			path = Alarms;
-			sourceTree = "<group>";
-		};
 		3942440D2B2FD23700EF0ACE /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,8 +125,8 @@
 		39D1130B2AAE54CC005A7C0A /* Epoch */ = {
 			isa = PBXGroup;
 			children = (
+				394244112B2FD66C00EF0ACE /* Alarms */,
 				3942440D2B2FD23700EF0ACE /* ViewModels */,
-				394244092B2FB95600EF0ACE /* Alarms */,
 				3999937F2AB88B5400CD435D /* Models */,
 				3966501E2AB4C70B000648F6 /* Views */,
 				3966501C2AB4C6E2000648F6 /* Core */,
@@ -218,9 +205,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				396650282AB4DDB2000648F6 /* Colors.xcassets in Resources */,
-				3942440B2B2FBA6E00EF0ACE /* marimba.mp3 in Resources */,
 				39D113142AAE54CD005A7C0A /* Preview Assets.xcassets in Resources */,
-				3942C90C2AB477C2005E6FD6 /* alert.mp3 in Resources */,
+				394244122B2FD66C00EF0ACE /* Alarms in Resources */,
 				39D113112AAE54CD005A7C0A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
