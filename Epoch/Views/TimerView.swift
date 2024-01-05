@@ -114,33 +114,6 @@ struct TimerView: View {
             Spacer()
         }
     }
-    
-//    private func checkNotificationPermission() {
-//            UNUserNotificationCenter.current().getNotificationSettings { settings in
-//                DispatchQueue.main.async {
-//                    switch settings.authorizationStatus {
-//                    case .authorized, .provisional:
-//                        isNotificationPermissionGranted = true
-//                    default:
-//                        isNotificationPermissionGranted = false
-//                    }
-//                }
-//            }
-//        }
-    
-//    func playTimerSound() {
-//        guard let url = Bundle.main.url(forResource: "jingle", withExtension: "mp3") else {
-//            print("Sound file not found")
-//            return
-//        }
-//        do {
-//            self.player = try AVAudioPlayer(contentsOf: url)
-//            self.player?.prepareToPlay()
-//            self.player?.play()
-//        } catch {
-//            print("Error playing sound: \(error.localizedDescription)")
-//        }
-//    }
 }
 
 struct DashedTimerArc: Shape {
