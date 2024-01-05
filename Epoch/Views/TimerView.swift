@@ -21,13 +21,13 @@ struct TimerView: View {
     var body: some View {
             VStack {
                 Spacer()
-
+                // Timer Clock
                 Text(timeString(from: viewModel.timeRemaining))
                     .font(.system(size: 48))
                     .fontWeight(.bold)
                     .foregroundColor(Color("Accent"))
                     .padding()
-                
+                // Play-Pause Button
                 Button(action: {
                     if viewModel.isActive {
                         viewModel.pauseTimer()
@@ -39,6 +39,7 @@ struct TimerView: View {
                         // ... button styling ...
                 }
                 .padding()
+                // Reset Button
                 if !viewModel.isActive && viewModel.timeRemaining < baseTimeInSeconds {
                     Button(action: {
                         viewModel.resetTimer()
@@ -46,9 +47,8 @@ struct TimerView: View {
                         Text("Restart Timer")
                     }
                 }
-
                 Spacer()
-                
+                // Ticking Circle Element
                 ZStack {
                     Circle()
                         .strokeBorder(style: StrokeStyle(lineWidth: 20))
@@ -63,9 +63,7 @@ struct TimerView: View {
                 }
                 .frame(width: 600, height: 150, alignment: .bottom) // Set the height to half of the circle's height
                 .offset(y: 300) // Push down to only show the top third
-//                .clipped() // Clip the view so the bottom half doesn't show
                 .padding(.bottom, -300) // Negate the offset to maintain the layout
-                
                 
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
