@@ -28,7 +28,7 @@ struct TimerView: View {
                 Text(timeString(from: viewModel.timeRemaining))
                     .font(.system(size: 48))
                     .fontWeight(.bold)
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .padding()
                 
                 Button(action: {
@@ -56,11 +56,11 @@ struct TimerView: View {
                     Circle()
                         .strokeBorder(style: StrokeStyle(lineWidth: 20))
                         .opacity(0.3)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color("Accent"))
                         .frame(width: 600, height: 600)
                     
                     Circle()
-                        .stroke(Color.white, style: StrokeStyle(lineWidth: 20, lineCap: .butt, dash: [2, 28]))
+                        .stroke(Color("Base"), style: StrokeStyle(lineWidth: 20, lineCap: .butt, dash: [2, 28]))
                         .frame(width: 600, height: 600)
                         .rotationEffect(Angle(degrees: -Double(1500 - viewModel.timeRemaining))) // Rotate based on timeRemaining
                 }
@@ -71,7 +71,9 @@ struct TimerView: View {
                 
                 
             }
-            .background(Color(red: 0.82, green: 0.74, blue: 0.59).edgesIgnoringSafeArea(.all))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(LinearGradient(gradient: Gradient(colors: [Color("Background"), Color("BackgroundAccent")]), startPoint: .top, endPoint: .bottom))
+                        .edgesIgnoringSafeArea(.all) // To extend the gradient to the screen edges
             .onAppear {
                 viewModel.setBaseTime(baseTimeInSeconds)
             }

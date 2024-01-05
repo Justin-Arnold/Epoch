@@ -28,6 +28,10 @@ struct MainTabView: View {
                     Label("Settings", systemImage: "gear")
                 }
         }
+        .accentColor(Color("Base"))
+        .onAppear {
+            UITabBar.appearance().unselectedItemTintColor = UIColor.gray
+        }
     }
 }
 
