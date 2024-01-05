@@ -9,11 +9,10 @@ import SwiftUI
 import Foundation
 
 struct MainTabView: View {
-    let examplePriority = Priority(name: "Work", id: UUID())
     
     var body: some View {
         TabView {
-            TimerView(priority: examplePriority)
+            TimerView()
                 .tabItem {
                     Label("Timer", systemImage: "timer")
                 }

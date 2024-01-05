@@ -12,15 +12,11 @@ struct TimerView: View {
     
     @AppStorage("baseTimeInMinutes") var baseTimeInMinutes: Int = 25
     @StateObject var viewModel = TimerViewModel()
-    var priorityName: String
         
     var baseTimeInSeconds: Int {
         return baseTimeInMinutes * 60
     }
     
-    init(priority: Priority) {
-        self.priorityName = priority.name
-    }
     
     var body: some View {
             VStack {
@@ -101,19 +97,6 @@ struct TimerView: View {
         
         return "\(minutesFromSec):\(formatToDoubleDigit(remainingSec))"
     };
-    
-    func TimerCircle() -> some View {
-        VStack {
-            Spacer()
-            Text(priorityName)
-                .foregroundColor(Color.white).brightness(-0.4)
-                .font(.system(size: 40))
-            Text("\(secondsToTime(sec: viewModel.timeRemaining))")
-                .foregroundColor(Color.white)
-                .font(.system(size: 80, weight: .bold, design: .serif))
-            Spacer()
-        }
-    }
 }
 
 struct DashedTimerArc: Shape {

@@ -9,14 +9,6 @@ import SwiftUI
 
 struct ChooseFocusView: View {
     
-    @State var priorities: [Priority] = [
-        Priority(name: "Epoch", id: UUID()),
-        Priority(name: "2nd Brain", id: UUID()),
-        Priority(name: "Finances", id: UUID()),
-        Priority(name: "Misc", id: UUID())
-    ]
-    
-    
     var body: some View {
         NavigationView {
             GeometryReader { geometry in
@@ -26,7 +18,7 @@ struct ChooseFocusView: View {
                         Spacer().frame(width: geometry.size.width / 2 - 135)  // assuming 135 is half of the card's width
                         
                         ForEach(priorities) { priority in
-                            NavigationLink(destination: TimerView(priority: priority)) {
+                            NavigationLink(destination: TimerView()) {
                                 PriorityCard(title: priority.name)
                             }
                         }

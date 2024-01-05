@@ -23,7 +23,6 @@
 		3988CF022B2547790062833C /* RoutineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988CF012B2547790062833C /* RoutineListView.swift */; };
 		3988CF042B2547B10062833C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988CF032B2547B10062833C /* SettingsView.swift */; };
 		3999937C2AB7C4B300CD435D /* PriorityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999937B2AB7C4B300CD435D /* PriorityCard.swift */; };
-		3999937E2AB88A4900CD435D /* ChooseFocusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999937D2AB88A4900CD435D /* ChooseFocusView.swift */; };
 		399993842AB88D0B00CD435D /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399993832AB88D0B00CD435D /* Priority.swift */; };
 		39D1130D2AAE54CC005A7C0A /* EpochApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1130C2AAE54CC005A7C0A /* EpochApp.swift */; };
 		39D1130F2AAE54CC005A7C0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1130E2AAE54CC005A7C0A /* ContentView.swift */; };
@@ -75,7 +74,6 @@
 		3988CF012B2547790062833C /* RoutineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineListView.swift; sourceTree = "<group>"; };
 		3988CF032B2547B10062833C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3999937B2AB7C4B300CD435D /* PriorityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityCard.swift; sourceTree = "<group>"; };
-		3999937D2AB88A4900CD435D /* ChooseFocusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFocusView.swift; sourceTree = "<group>"; };
 		399993832AB88D0B00CD435D /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
 		39D113092AAE54CC005A7C0A /* Epoch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Epoch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D1130C2AAE54CC005A7C0A /* EpochApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpochApp.swift; sourceTree = "<group>"; };
@@ -157,7 +155,6 @@
 			children = (
 				3988CF032B2547B10062833C /* SettingsView.swift */,
 				3966501A2AB4BC04000648F6 /* OnboardingView.swift */,
-				3999937D2AB88A4900CD435D /* ChooseFocusView.swift */,
 				39DE80282B280D3800C6CE6B /* RoutineDetailView.swift */,
 				3988CEFF2B25473E0062833C /* MainTabView.swift */,
 				39D1130E2AAE54CC005A7C0A /* ContentView.swift */,
@@ -332,7 +329,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				3966501B2AB4BC04000648F6 /* OnboardingView.swift in Sources */,
-				3999937E2AB88A4900CD435D /* ChooseFocusView.swift in Sources */,
 				3988CF002B25473E0062833C /* MainTabView.swift in Sources */,
 				39D8E0092B2E47D3001F0AD8 /* TimerViewModel.swift in Sources */,
 				3966502A2AB4E4F0000648F6 /* AppBackground.swift in Sources */,
