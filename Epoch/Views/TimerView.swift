@@ -9,6 +9,7 @@ import SwiftUI
 import AVFoundation
 
 struct TimerView: View {
+    
     @AppStorage("baseTimeInMinutes") var baseTimeInMinutes: Int = 25
     @StateObject var viewModel = TimerViewModel()
     var priorityName: String
@@ -24,11 +25,11 @@ struct TimerView: View {
     var body: some View {
             VStack {
                 Spacer()
-                
+
                 Text(timeString(from: viewModel.timeRemaining))
                     .font(.system(size: 48))
                     .fontWeight(.bold)
-                    .foregroundColor(.black)
+                    .foregroundColor(Color("Accent"))
                     .padding()
                 
                 Button(action: {
