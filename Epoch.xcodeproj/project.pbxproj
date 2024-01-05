@@ -14,6 +14,8 @@
 		3930046A2B478F3100107311 /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393004692B478F3100107311 /* TimerWidget.swift */; };
 		3930046C2B478F3200107311 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3930046B2B478F3200107311 /* Assets.xcassets */; };
 		393004702B478F3200107311 /* TimerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 3930045E2B478F3100107311 /* TimerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		393004782B47A22900107311 /* TimerWidgetAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393004772B47A22900107311 /* TimerWidgetAttributes.swift */; };
+		393004792B47A22900107311 /* TimerWidgetAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393004772B47A22900107311 /* TimerWidgetAttributes.swift */; };
 		394244292B307AD500EF0ACE /* Alarms in Resources */ = {isa = PBXBuildFile; fileRef = 394244282B307AD500EF0ACE /* Alarms */; };
 		3966501B2AB4BC04000648F6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3966501A2AB4BC04000648F6 /* OnboardingView.swift */; };
 		396650212AB4C80F000648F6 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 396650202AB4C80F000648F6 /* TimerView.swift */; };
@@ -65,6 +67,7 @@
 		393004692B478F3100107311 /* TimerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidget.swift; sourceTree = "<group>"; };
 		3930046B2B478F3200107311 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3930046D2B478F3200107311 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		393004772B47A22900107311 /* TimerWidgetAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerWidgetAttributes.swift; sourceTree = "<group>"; };
 		394244282B307AD500EF0ACE /* Alarms */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Alarms; sourceTree = "<group>"; };
 		3966501A2AB4BC04000648F6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		396650202AB4C80F000648F6 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 				393004692B478F3100107311 /* TimerWidget.swift */,
 				3930046B2B478F3200107311 /* Assets.xcassets */,
 				3930046D2B478F3200107311 /* Info.plist */,
+				393004772B47A22900107311 /* TimerWidgetAttributes.swift */,
 			);
 			path = TimerWidget;
 			sourceTree = "<group>";
@@ -320,6 +324,7 @@
 			files = (
 				393004682B478F3100107311 /* TimerWidgetLiveActivity.swift in Sources */,
 				393004662B478F3100107311 /* TimerWidgetBundle.swift in Sources */,
+				393004792B47A22900107311 /* TimerWidgetAttributes.swift in Sources */,
 				3930046A2B478F3100107311 /* TimerWidget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -329,6 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3966501B2AB4BC04000648F6 /* OnboardingView.swift in Sources */,
+				393004782B47A22900107311 /* TimerWidgetAttributes.swift in Sources */,
 				3988CF002B25473E0062833C /* MainTabView.swift in Sources */,
 				39D8E0092B2E47D3001F0AD8 /* TimerViewModel.swift in Sources */,
 				3966502A2AB4E4F0000648F6 /* AppBackground.swift in Sources */,
