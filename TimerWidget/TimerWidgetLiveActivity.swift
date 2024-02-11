@@ -11,57 +11,75 @@ import SwiftUI
 
 struct TimerWidgetLiveActivity: Widget {
     var body: some WidgetConfiguration {
-        ActivityConfiguration(for: TimerWidgetAttributes.self) { context in
-            // Lock screen/banner UI goes here
-            VStack {
-                Text("Hello \(context.state.emoji)")
-            }
-            .activityBackgroundTint(Color.cyan)
-            .activitySystemActionForegroundColor(Color.black)
-
-        } dynamicIsland: { context in
+        
+        ActivityConfiguration(for: TimerWidgetAttributes.self) {
+            context in LockScreenView(context: context)
+        } 
+    
+        dynamicIsland: { context in
             DynamicIsland {
-                // Expanded UI goes here.  Compose the expanded UI through
-                // various regions, like leading/trailing/center/bottom
+                
+                let color = Color.green
+                
                 DynamicIslandExpandedRegion(.leading) {
-                    Text("Leading")
+                    Text(context.state.time)
+                        .font(.title3)
+                        .bold()
                 }
                 DynamicIslandExpandedRegion(.trailing) {
-                    Text("Trailing")
+                    Text(context.state.time)
+                        .foregroundColor(color)
+                        .font(.title3)
+                        .bold()
                 }
                 DynamicIslandExpandedRegion(.bottom) {
-                    Text("Bottom \(context.state.emoji)")
-                    // more content
+                    HStack {
+                        Text(context.attributes.sessionName)
+                            .foregroundColor(color)
+                        Spacer()
+                        //PercentView(context: context)
+                    }
+                    .font(.title3)
+                    .bold()
                 }
             } compactLeading: {
-                Text("L")
+                Text(context.state.time)
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(Color.green)
             } compactTrailing: {
-                Text("T \(context.state.emoji)")
+                Text(context.state.time)
+                    .font(.title2)
+                    .bold()
+                    .foregroundColor(Color.green)
             } minimal: {
-                Text(context.state.emoji)
+                Image(systemName: "circle")
+                    .foregroundColor(.green)
             }
-            .widgetURL(URL(string: "http://www.apple.com"))
-            .keylineTint(Color.red)
         }
     }
 }
+        
 
 extension TimerWidgetAttributes {
     fileprivate static var preview: TimerWidgetAttributes {
-        TimerWidgetAttributes(name: "World")
+        TimerWidgetAttributes(
+            sessionName: "Break",
+            sessionCount: 2
+        )
     }
 }
-
+//
 extension TimerWidgetAttributes.ContentState {
     fileprivate static var smiley: TimerWidgetAttributes.ContentState {
-        TimerWidgetAttributes.ContentState(emoji: "😀")
+        TimerWidgetAttributes.ContentState(time: "5:00")
      }
      
      fileprivate static var starEyes: TimerWidgetAttributes.ContentState {
-         TimerWidgetAttributes.ContentState(emoji: "🤩")
+         TimerWidgetAttributes.ContentState(time: "25:00")
      }
 }
-
+//
 #Preview("Notification", as: .content, using: TimerWidgetAttributes.preview) {
    TimerWidgetLiveActivity()
 } contentStates: {

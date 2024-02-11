@@ -24,8 +24,14 @@
 		3988CF002B25473E0062833C /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988CEFF2B25473E0062833C /* MainTabView.swift */; };
 		3988CF022B2547790062833C /* RoutineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988CF012B2547790062833C /* RoutineListView.swift */; };
 		3988CF042B2547B10062833C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3988CF032B2547B10062833C /* SettingsView.swift */; };
+		3992DFFB2B780683000CC2B4 /* TimerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393004692B478F3100107311 /* TimerWidget.swift */; };
+		3992DFFC2B780707000CC2B4 /* TimerWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 393004672B478F3100107311 /* TimerWidgetLiveActivity.swift */; };
 		3999937C2AB7C4B300CD435D /* PriorityCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3999937B2AB7C4B300CD435D /* PriorityCard.swift */; };
 		399993842AB88D0B00CD435D /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399993832AB88D0B00CD435D /* Priority.swift */; };
+		399CEE9C2B49FA33006BC6CF /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CEE9B2B49FA33006BC6CF /* LockScreenView.swift */; };
+		399CEE9D2B49FA33006BC6CF /* LockScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CEE9B2B49FA33006BC6CF /* LockScreenView.swift */; };
+		399CEE9F2B49FA6E006BC6CF /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CEE9E2B49FA6E006BC6CF /* TestView.swift */; };
+		399CEEA02B49FA6E006BC6CF /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 399CEE9E2B49FA6E006BC6CF /* TestView.swift */; };
 		39D1130D2AAE54CC005A7C0A /* EpochApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1130C2AAE54CC005A7C0A /* EpochApp.swift */; };
 		39D1130F2AAE54CC005A7C0A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39D1130E2AAE54CC005A7C0A /* ContentView.swift */; };
 		39D113112AAE54CD005A7C0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39D113102AAE54CD005A7C0A /* Assets.xcassets */; };
@@ -78,6 +84,9 @@
 		3988CF032B2547B10062833C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3999937B2AB7C4B300CD435D /* PriorityCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityCard.swift; sourceTree = "<group>"; };
 		399993832AB88D0B00CD435D /* Priority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Priority.swift; sourceTree = "<group>"; };
+		399CEE972B49D90C006BC6CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		399CEE9B2B49FA33006BC6CF /* LockScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenView.swift; sourceTree = "<group>"; };
+		399CEE9E2B49FA6E006BC6CF /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		39D113092AAE54CC005A7C0A /* Epoch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Epoch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39D1130C2AAE54CC005A7C0A /* EpochApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpochApp.swift; sourceTree = "<group>"; };
 		39D1130E2AAE54CC005A7C0A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +134,8 @@
 				3930046B2B478F3200107311 /* Assets.xcassets */,
 				3930046D2B478F3200107311 /* Info.plist */,
 				393004772B47A22900107311 /* TimerWidgetAttributes.swift */,
+				399CEE9B2B49FA33006BC6CF /* LockScreenView.swift */,
+				399CEE9E2B49FA6E006BC6CF /* TestView.swift */,
 			);
 			path = TimerWidget;
 			sourceTree = "<group>";
@@ -198,6 +209,7 @@
 		39D1130B2AAE54CC005A7C0A /* Epoch */ = {
 			isa = PBXGroup;
 			children = (
+				399CEE972B49D90C006BC6CF /* Info.plist */,
 				394244282B307AD500EF0ACE /* Alarms */,
 				3942440D2B2FD23700EF0ACE /* ViewModels */,
 				3999937F2AB88B5400CD435D /* Models */,
@@ -322,8 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				399CEEA02B49FA6E006BC6CF /* TestView.swift in Sources */,
 				393004682B478F3100107311 /* TimerWidgetLiveActivity.swift in Sources */,
 				393004662B478F3100107311 /* TimerWidgetBundle.swift in Sources */,
+				399CEE9D2B49FA33006BC6CF /* LockScreenView.swift in Sources */,
 				393004792B47A22900107311 /* TimerWidgetAttributes.swift in Sources */,
 				3930046A2B478F3100107311 /* TimerWidget.swift in Sources */,
 			);
@@ -334,10 +348,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3966501B2AB4BC04000648F6 /* OnboardingView.swift in Sources */,
+				3992DFFB2B780683000CC2B4 /* TimerWidget.swift in Sources */,
 				393004782B47A22900107311 /* TimerWidgetAttributes.swift in Sources */,
 				3988CF002B25473E0062833C /* MainTabView.swift in Sources */,
+				399CEE9C2B49FA33006BC6CF /* LockScreenView.swift in Sources */,
 				39D8E0092B2E47D3001F0AD8 /* TimerViewModel.swift in Sources */,
+				3992DFFC2B780707000CC2B4 /* TimerWidgetLiveActivity.swift in Sources */,
 				3966502A2AB4E4F0000648F6 /* AppBackground.swift in Sources */,
+				399CEE9F2B49FA6E006BC6CF /* TestView.swift in Sources */,
 				399993842AB88D0B00CD435D /* Priority.swift in Sources */,
 				3988CF022B2547790062833C /* RoutineListView.swift in Sources */,
 				39DE80292B280D3800C6CE6B /* RoutineDetailView.swift in Sources */,
@@ -374,6 +392,7 @@
 				INFOPLIST_FILE = TimerWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TimerWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -382,13 +401,16 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Justin.Epoch.TimerWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.justin-arnold.Epoch.TimerWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -406,6 +428,7 @@
 				INFOPLIST_FILE = TimerWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TimerWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -414,12 +437,15 @@
 				);
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Justin.Epoch.TimerWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.justin-arnold.Epoch.TimerWidget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -475,7 +501,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -531,7 +557,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -553,21 +579,29 @@
 				DEVELOPMENT_TEAM = K8K58S95B6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Epoch/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Justin.Epoch;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.justin-arnold.Epoch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -583,21 +617,29 @@
 				DEVELOPMENT_TEAM = K8K58S95B6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Epoch/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
+				INFOPLIST_KEY_NSSupportsLiveActivitiesFrequentUpdates = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Justin.Epoch;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.justin-arnold.Epoch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

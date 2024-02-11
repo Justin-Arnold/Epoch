@@ -8,6 +8,8 @@
 import Foundation
 import AVFoundation
 import UserNotifications
+import ActivityKit
+import WidgetKit
 
 
 class TimerViewModel: ObservableObject {
@@ -15,6 +17,7 @@ class TimerViewModel: ObservableObject {
     @Published var timeRemaining: Int
     @Published var isActive: Bool = false
     private var audioPlayer: AVAudioPlayer?
+    private var activity: Activity<TimerWidgetAttributes>?
 
     private var baseTimeInSeconds: Int = 0
     private var startTime: Date?
@@ -30,6 +33,24 @@ class TimerViewModel: ObservableObject {
         scheduleNotification()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             self?.updateRemainingTime()
+        }
+        
+        let contentState = TimerWidgetAttributes.ContentState(time: "5:00")
+        let attributes = TimerWidgetAttributes(sessionName: "Test", sessionCount: 2)
+        
+        do {
+            activity = try Activity.request(
+                attributes: attributes,
+                content: .init(state: contentState, staleDate: nil),
+                pushType: nil
+            )
+            
+            print("Activity starts:")
+            
+            
+            /*startUpdates*/()
+        } catch (let error) {
+            print("Error starting Live Activity: \(error.localizedDescription).")
         }
     }
 
